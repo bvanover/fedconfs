@@ -1,0 +1,80 @@
+
+// waybar config
+// 111121
+
+
+{
+"layer": "top",
+"position": "top",
+"modules-left": ["wlr/workspaces", "hyprland/window"],
+"modules-center": ["clock"],
+"modules-right":  ["custom/offswitch"],
+
+"battery": {
+  "min-length": 5,
+  "states": {
+  "full": 90,
+  "warning": 30,
+  "critical": 15,
+  },
+  "tooltip": false,
+  "full-at": 95,
+  "format-plugged": "{icon} {capacity}%",
+  "format-charging": "{icon} {capacity}%",
+  "format": "{icon} {capacity}%",
+  "format-icons": ["", "", "", "", "", "", ""],
+},
+"wlr/workspaces": {
+     "format": "{icon}",
+     "format-icons": {
+		"1": "❖",
+		"2": "➥",
+		"3": "♫",
+		"4": "⌨",
+     },
+     "sort-by-number": true,
+    // "on-scroll-up": "hyprctl dispatch workspace e+1",
+    // "on-scroll-down": "hyprctl dispatch workspace e-1",
+    // "on-click": "/usr/local/bin/hyprctl dispatch workspace 3"
+},
+
+"hpyrland/window": {
+	"max-length": 200,
+	"seperate-outputs": true,
+},
+
+"clock": {
+  "format": " {:%a %b %d %I:%M}",
+  "tooltip": false,
+  "min-length": 18,
+},
+"custom/offswitch": {
+  "tooltip": false,
+  "format": "",
+  "interval": "once",
+  "on-click": "systemctl poweroff",
+},
+"network": {
+  "interval": 2,
+  "format-wifi": " {ipaddr}",
+  "format-ethernet": " {ipaddr}",
+  "format-linked": " {ipaddr}",
+  "format-disconnected": " Disconnected",
+  "format-disabled": "",
+  "tooltip": false,
+  "max-length": 20,
+  "min-length": 6,
+},
+"pulseaudio": {
+  "tooltip": false,
+  "min-length": 5,
+  "format": "{icon} {volume}%",
+  "format-bluetooth": "{icon} {volume}%",
+  "format-muted": "MUTE",
+  "format-icons": {
+  "headphone": "",
+  "headset": "",
+  "default": ["", "", ""],
+  },
+},
+}
