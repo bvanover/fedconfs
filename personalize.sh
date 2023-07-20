@@ -1,7 +1,5 @@
 #!/bin/zsh
 
-# clones the appropriate repo, bvanover/fedconfs
-git clone https://github.com/bvanover/fedconfs
 
 # moves the files in bvanover/fedconfs into their appropriate locales, see fedconfs/README.md for more info
 
